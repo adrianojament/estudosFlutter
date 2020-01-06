@@ -1,0 +1,43 @@
+void main() {
+  
+  Pessoa adriano = Pessoa("adriano", 37, 1.86);
+  
+  adriano.Dormir();
+  print(adriano.idade);
+  adriano.Aniversario();
+  print(adriano.idade);
+  
+  Pessoa nene = Pessoa.Nascer("Maria", 0.30);
+  print(nene.nome);
+  print(nene.idade);
+  
+}
+
+class Pessoa {
+  String nome;
+  int idade;
+  double altura;
+  
+  /*Pessoa(String nome, int idade, double altura){
+    this.nome = nome;
+    this.idade = idade;
+    this.altura = altura;
+  }*/
+  
+  Pessoa(this.nome, this.idade, this.altura);
+  
+  //Name constructor
+  Pessoa.Nascer(this.nome, this.altura){
+    this.idade = 0;
+    print("$nome nasceu");
+    Dormir();
+  }
+  
+  void Dormir(){
+    print("$nome está dormindo");
+  }
+  
+  void Aniversario(){
+    idade++;
+  }
+}

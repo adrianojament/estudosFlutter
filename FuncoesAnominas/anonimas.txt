@@ -1,0 +1,19 @@
+void main() {
+  CriarBotao("Nome", botaoCriado);
+
+  CriarBotao("Nome", () {
+    print("Botao criado por func anomina");
+  });
+}
+
+void botaoCriado() {
+  print("Botao Criado");
+}
+
+void CriarBotao(String texto, Function criadoFunc,
+    {String cor = "Azul", double largura = 20}) {
+  print(texto);
+  print(cor);
+  print(largura);
+  criadoFunc();
+}

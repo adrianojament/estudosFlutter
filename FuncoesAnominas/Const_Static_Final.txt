@@ -1,0 +1,21 @@
+class Valores{
+  static int vezesClicado;
+}
+
+class Pessoa{
+  
+}
+
+void main() {
+  const numero = 3;
+  
+  Valores.vezesClicado = 2;
+  
+  print(numero);
+  print(Valores.vezesClicado);
+  
+  final Pessoa pessoa = Pessoa();
+  
+  
+  
+}

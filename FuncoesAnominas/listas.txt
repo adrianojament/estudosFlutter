@@ -1,0 +1,40 @@
+class Pessoa{
+  String nome;
+  int idade;
+  
+  Pessoa(this.nome, this.idade);
+  
+  @override
+  String toString(){
+    return "Nome: ${this.nome} Idade: ${this.idade}";
+  }
+    
+}
+
+void main(){
+  List<String> nomes = ["Adriano", "Juliana", "Cassiel", "Maria Valentina"];
+  
+  print(nomes[0]);  
+  nomes.add("Aparecida");  
+  print(nomes);
+  
+  print(nomes.length);
+  nomes.removeAt(2);
+  print(nomes);
+  
+  nomes.insert(2, "Cassiel");
+  print(nomes);
+  
+  print(nomes.contains("Daniel"));
+  print(nomes.contains("Maria"));
+  
+  List<Pessoa> pessoas = List();
+  
+  pessoas.add(Pessoa("Adriano", 37));
+  pessoas.add(Pessoa("Juliana", 41));
+  
+  for(Pessoa p in pessoas){
+    print(p);
+  }
+  
+}

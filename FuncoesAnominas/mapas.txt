@@ -1,0 +1,45 @@
+class InfosPessoa{
+  int idade;
+  InfosPessoa(this.idade);
+  
+  @override
+  String toString(){
+    return "${this.idade}";
+  }
+}
+
+
+void main() {
+  Map<int, String> ddd = Map();
+
+  ddd[11] = "São Paulo";
+  ddd[19] = "Campinas";
+  ddd[13] = "Num sei";
+  
+  Map<String, dynamic> pessoa = Map();
+  
+  pessoa["nome"] = "Adriano";
+  pessoa["idade"] = 10;
+  pessoa["Altura"] = 1.83;
+  
+  print(pessoa.keys);
+  print(pessoa.values);
+  print(pessoa);
+  
+  print("");
+  print(ddd.keys);
+  print(ddd.values);
+  print(ddd);
+  
+  Map<String, InfosPessoa> pessoas = Map();
+  
+  pessoas["Adriano"] = InfosPessoa(37);
+  pessoas["Juliana"] = InfosPessoa(42);
+  pessoas["Cassiel"] = InfosPessoa(15);
+  pessoas["MariaValentina"] = InfosPessoa(04);
+  
+  print("");
+  print(pessoas.keys);
+  print(pessoas.values);
+  print(pessoas);  
+}

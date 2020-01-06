@@ -1,0 +1,71 @@
+abstract class Animal {
+  String nome;
+  double peso;
+
+  Animal(this.nome, this.peso);
+
+  void comer() {
+    print("$nome comeu");
+  }
+
+  void fazerSom();
+  
+  @override
+  String toString() {
+    return "Animal | nome: $nome| peso: $peso";
+  }
+}
+
+class Cachorro extends Animal {
+  int fofura;
+
+  Cachorro(String nome, double peso, this.fofura) : super(nome, peso);
+
+  void brincar() {
+    fofura += 10;
+    print("Fofura do $nome aumentou para $fofura");
+  }
+
+  @override
+  void fazerSom() {
+    print("$nome fez au au au");
+  }
+
+  @override
+  String toString() {
+    return "Cachorro | nome: $nome| peso: $peso| Fofura: $fofura";
+  }
+}
+
+class Gato extends Animal {
+  Gato(String nome, double peso) : super(nome, peso);
+
+  @override
+  void fazerSom() {
+    print("$nome fez miau miau miau");
+  }
+
+  bool estaAmigavel() {
+    return true;
+  }
+
+  @override
+  String toString() {
+    return "Gato | nome: $nome| peso: $peso";
+  }
+}
+
+void main() {
+  Cachorro cachorro = Cachorro("Dog", 10, 100);
+  cachorro.fazerSom();
+  cachorro.brincar();
+  cachorro.comer();
+  print(cachorro);
+
+  Gato gato = Gato("cat", 10);
+  gato.fazerSom();
+  gato.comer();
+  print("Está amigavel? ${gato.estaAmigavel()}");
+  print(gato); 
+
+}

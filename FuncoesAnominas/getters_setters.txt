@@ -1,0 +1,60 @@
+void main() {
+  
+  Pessoa adriano = Pessoa("adriano", 37, 1.86);
+  
+  adriano.dormir();
+  print(adriano.idade);
+  adriano.aniversario();
+  print(adriano.idade);
+  
+  Pessoa nene = Pessoa.nascer("Maria", 0.30);
+  print(nene.nome);
+  print(nene.idade);
+  print(nene.altura);
+  nene.altura = 15.00;
+  print(nene.altura);
+  
+}
+
+class Pessoa {
+  String nome;
+  int _idade; //Private
+  double _altura;
+  
+  /*Pessoa(String nome, int idade, double altura){
+    this.nome = nome;
+    this.idade = idade;
+    this.altura = altura;
+  }*/
+  
+  int get idade{
+    return this._idade;
+  }
+  
+  double get altura{
+    return this._altura;
+  }
+  
+  set altura(double altura){
+     if (altura > 0.00 && altura < 3.0) {
+       this._altura = altura;
+     }
+  }
+  
+  Pessoa(this.nome, this._idade, this._altura);
+  
+  //Name constructor
+  Pessoa.nascer(this.nome, this._altura){
+    this._idade = 0;
+    print("$nome nasceu");
+    dormir();
+  }
+  
+  void dormir(){
+    print("$nome está dormindo");
+  }
+  
+  void aniversario(){
+    this._idade++;
+  }
+}
