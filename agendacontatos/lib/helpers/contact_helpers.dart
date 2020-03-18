@@ -114,7 +114,7 @@ class Contact {
     };
 
     if (this.id != null) {
-      this.id = map[idColumn];
+      map[idColumn] = id;
     }
 
     return map;
